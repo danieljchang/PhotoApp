@@ -1,0 +1,40 @@
+.navwrapper {
+  background-color: pink;
+  overflow: hidden;
+  padding: 20px;
+  }
+  
+.navwrapper a{
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 100px;
+  }
+.navbar{
+    font-size: 100px;
+    align-items: center;
+}
+#posty{
+  text-align: right;
+  font-size: 30px;
+  margin-left: 30px;
+}
+#login{
+  text-align: right;
+  font-size: 30px;
+  margin-left: auto;
+}
+#explore{
+  text-align: right;
+  font-size: 30px;
+  
+}
+#search{
+  float: right;
+  padding: 10px 16px;
+  border: black;
+  margin-top: 75px;
+  font-size: 17px;
+}
