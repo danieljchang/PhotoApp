@@ -1,11 +1,15 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>{{title}}</title>
-    <link rel="icon" href="/public/favicon.ico" sizes="70x70" type="image/ico">
-    <link rel='stylesheet' href='/public/css/homepage.css' />
-  </head>
+
+    <head><meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, inital-scale=1.0">
+        <title>Home</title>
+        <link rel="stylesheet" type="text/css" href="../public/css/csshome.css">
+        <link rel="stylesheet" type="text/css" href="../public/css/homepage.css">
+        <script defer type="text/javascript" src="../public/js/jshome.js"></script>
+    </head>
   <body>
-    {{{body}}}
+    <div class="container">
+      {{>banner}}
+      {{{body}}}
+    </div>
   </body>
-</html>
+

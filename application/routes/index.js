@@ -9,6 +9,23 @@ router.get('/', function(req, res, next) {
 
 router.get('/login', (req, res, next) => {
   res.render('login');
-})
+});
+
+router.get('/postimage', (req, res, next)=>{
+  res.render('postimage');
+});
+
+router.get('/homepage', (req, res, next)=>{
+  res.render('homepage');
+});
+
+router.get('/home', (req, res, next)=>{
+  res.render('home');
+});
+
+router.get('/registration', (req, res, next)=>{
+  res.render('registration');
+});
+
 module.exports = router;
 
