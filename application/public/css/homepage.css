@@ -113,8 +113,9 @@
   width: 80%;
   margin-top: 20px;
   margin-left: 100%;
-  min-height: 100px;
-  height: 450px;
+  display: block;
+  height: 75%;
+  max-height: fit-content;
   padding-bottom: 20px;
   position: relative;
   border: 1px solid black;
@@ -131,10 +132,10 @@
   font-family: inherit;
   padding: 10px;
   margin: 10px;
-  width: 40%;
+  width: 80%;
 }
 .form-control-button{
-  margin: 10px
+  margin: 10px;
   padding-bottom: 20px;
   position: relative;
 }

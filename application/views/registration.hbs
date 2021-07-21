@@ -1,49 +1,46 @@
 
     
-        <a href="#registration-form"><h2 class = "header"</h2>Registration</h2></a>
     
-        <body class = "body">
-            <form class = "registration-form" id="registration-form">
+        <body class = "grid-container">
+            <form class = "form" id="registration-form">
                 <div class=form-control>
                     <label for="Username" class="username">Username</label>
                     <input type="text" id="username" placeholder="Type Username">
                     <small class ="error"> Error </small>
-                    <br/>
                 </div>
 
                 <div class=form-control>
                     <label for="Email" class="email">Email</label>
                     <input type="email" id="email" placeholder="Type Email" >
                     <small class ="error"> Error </small>
-                    <br/>
                 </div>
 
                 <div class=form-control>
                     <label for="password" class="password">Password</label>
-                    <input type="text" id="password" placeholder="Type Password" >
+                    <input type="password" id="password" placeholder="Type Password" >
                     <small class ="error"> Error </small>
-                    <br/>
+                 
                 </div>
 
                 <div class=form-control>
                     <label for="password" class="password1">Confirm Password</label>
                     <input type="password" id="password1" placeholder="Re-Type Password" >
                     <small class ="error"> Error </small>
-                    <br/>
+              
                 </div>
         
                 <div class=form-controlBox>
                     <label for="age" class="age">Confirm if 13+ Years Old</label>
                     <input type="checkbox" id="age" required>
-                    <br/>
+             
                 </div>
 
                 <div class=form-controlBox>
                     <label for="TOS" class="TOS"> <a href=null>TOS and Privacy Rules</a><br/>Yes I agree</label>
                     <input type="checkbox" id="TOS" required>  
-                    <br/>
+                
                 </div> 
-                <input class="submit" type="submit" value="Submit"/>
+                <input class="submit" type="submit" value="Submit" id = "btn"/>
                 <input class ="clear" type="reset" value = "Clear"/>
                 
             </form>

@@ -54,11 +54,14 @@ function fadeOut(event) {
         else {
             clearInterval(intervalID);
             clickDiv.remove();
-            document.getElementById("items-count").innerText = "There are " + document.getElementById("container").childElementCount +  " photo(s) being shown";
+            document.getElementById("items-count").innerText = "There are " + document.getElementById("container1").childElementCount +  " photo(s) being shown";
 
         }
           
     }, 25);
     
     
-}
+    
+
+
+    }

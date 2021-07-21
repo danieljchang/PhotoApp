@@ -7,7 +7,7 @@ const password1 = document.getElementById('password1');
 const age = document.getElementById('age');
 const TOS = document.getElementById('TOS');
 
-form.addEventListener('submit', e => {
+document.addEventListener('submit', e => {
     e.preventDefault();
     check();
 });
@@ -35,7 +35,7 @@ function check(){
     }
     
     if (emailCheck.test(emailValue)){
-        setErrorfor(email, "Email is not valud");
+        setErrorFor(email, "Email is not valid");
     }else {
         setSuccessFor(email);
     }
@@ -61,7 +61,6 @@ function setErrorFor(input, message){
     const formControl = input.parentElement;
     const small = formControl.querySelector('small');
     small.innerText = message;
-
     formControl.className = 'form-control error';
 }
 
@@ -69,3 +68,17 @@ function setSuccessFor(input) {
 	const formControl = input.parentElement;
 	formControl.className = 'form-control success';
 }
+let users = [];
+const addUser = (ev)=>{
+    ev.preventDefault();
+    let user = {
+        username: document.getElementById('username').value,
+        password: document.getElementById('password').value,
+        email: document.getElementById('email'),
+        age: document.getElementById('age')
+    }
+    users.push(user);
+    window.location.href="/login";
+}
+
+document.getElementById('btn').addEventListener('click', addUser);

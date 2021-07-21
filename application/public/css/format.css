@@ -1,114 +1,5 @@
-*{
-    box-sizing:border-box;
-}
-
-.username{
-    grid-area: username;
-    text-align: center;
-    padding: 20px 0;
-}
-.email{
-    grid-area: email;
-    text-align: center;
-    padding: 20px 0;
-}
-
-.password{
-    grid-area: password;
-    text-align: center;
-    padding: 20px 0;
-}
-
-.password1{
-    grid-area: password1;
-    text-align: center;
-    padding: 20px 0;
-}
-
-.age{
-    grid-area: age;
-    text-align: center;
-    padding: 20px 0;
-
-}
-.TOS{
-    grid-area: TOS;
-    text-align: center;
-    padding: 20px 0;
-}
-
-fieldset{
-    display: contents;
 
 
-}
-.contents1{
-    grid-area: contents1;
-    font-size: 15px;
-}
-.contents2{
-    grid-area: contents2;
-    font-size: 15px;
-
-}
-.contents3{
-    grid-area: contents3;
-    font-size: 15px;
-
-}
-.contents4{
-    grid-area: contents4;
-    font-size: 15px;
-
-}
-.contents5{
-    grid-area: contents5;
-    width: 20px;
-    height: 20px;
-}
-.contents6{
-    grid-area: contents6;
-    width: 20px;
-    height: 20px;
-}
-
-
-
-
-
-.header{
-    padding: 10px 20px;
-    margin: 0px;
-}
-body{
-    background-color: purple;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    margin: 0px;
-}
-.registration-form{
-    padding: 30px 40px;
-}
-
-.container{
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    width: 500px;
-    max-width: 100%;
-}
-.form-control{
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    position: relative;
-}
-
-.form-control label{
-    display: inline-block;
-    margin-bottom: 10px;
-}
 
 .form-control input{
     border:2px solid #f0f0f0;
@@ -134,8 +25,7 @@ body{
     color: red;
     visibility: hidden;
     position: absolute;
-    bottom: 0;
-    left: 0;
+    
 }
 .form-control.error small{
     visibility: visible;
@@ -148,11 +38,13 @@ body{
 }
 .form-controlBox label{
     display: inline-block;
-    margin-bottom: 5px;
+    margin: 5px;
+    
 }
 .form-controlBox input{
     display: block;
     padding: 14px;
+    margin-left: 10px;
 }
 
 
@@ -163,31 +55,13 @@ body{
 
 
 
-.grid-container{
-    display: grid;
-    width: 500px;
-    height: 80px;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr;
-    padding: 10px;
-}
-.submission-grid{
-    display:grid;
-    width: 473px;
-    margin-bottom: 10px
-}
 
-.info{
-    margin-bottom: 5px;
-    margin-top: 10px;
-    
-}
 
 .submit{
     background-color: #87CEFA;
     color: black;
     transition: all 200ms ease-out;
-    width: 250px;
+    width: 80%;
     height: 50px;
 }
 .submit:hover{
@@ -200,7 +74,7 @@ body{
     background-color: lightCoral;
     color: black;
     transition: all 200ms ease-out;
-    width: 250px;
+    width: 80%;
     height: 50px;
 }
 .clear:hover{
@@ -209,127 +83,8 @@ body{
     border:2px solid lightCoral;
 }
 
-#faded{
-    height:70px;
-    width:500px;
-    line-height:70px;
-    text-align:center;
-    border:2px solid #dd;
-    border-radius: 3px;
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
-    transition: all 200ms ease-out;
-    background-color: rgba(0,200,200,0.4)
-    
-}
-#faded:hover{
-    box-shadow: 0 0 5px rgba(30,30,278,1);
-
-}
-#fadedblue{
-    box-shadow:0 0 0 1px rgba(0,0,0,0.2);
-    transition: all 200ms ease-out;
-}
-#fadedblue:hover{
-    box-shadow:0 0 5px rgba(60, 50, 200, 1);
-}
-
-.head{
-    grid-area: head;
-    background: skyblue;
-    text-align: center;
-    padding: 70px 0;
-    font-size: 50px;
-    font-weight: 400;
-
-}
-.footer{
-    grid-area: footer;
-    background: red;
-    text-align: center;
-    padding: 30px 0;
-    font-size: 15px;
-}
-.sidebar{
-    grid-area: sidebar;
-    background: yellow;
-    text-align:center;
-    padding: 200px 0;
-}
-.picture{
-    grid-area: picture;
-    align-content: center;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-}
-.time{
-    grid-area: time;
-    background: green;
-    text-align: center;
-    padding: 90px 0;
-}
-.grid-image-post{
-    display: grid;
-    width: 500px;
-    height: 40%;
-    grid-template-rows: 1fr 0.07fr 1fr 1fr;
-    grid-template-columns: 3fr 1fr 1fr;
-    grid-template-areas:
-    'head head time'
-    'footer . .'
-    'picture picture sidebar'
-    'picture picture sidebar';
-}
 
 
-.title{
-    grid-area: title;
-    border: 1px solid black;
-    text-align: center;
-    padding: 30px 0;
-}
-.titlebox{
-    grid-area: titlebox;
-    font-size: 15px;
-}
-.desc{
-    grid-area: desc;
-    border: 1px solid black;
-    text-align: center;
-    padding: 30px 0;
-}
-.descbox{
-    grid-area: descbox;
-    font-size: 15px;
-
-}
-.image{
-    grid-area: image;
-    border: 1px solid black;
-    text-align: center;
-    padding: 30px 0;
-}
-.imagebox{
-    grid-area: imagebox;
-    text-align: center;
-    padding: 30px 0;
-    border: 1px solid grey;
-    
-}
-
-
-.post-image-grid{
-    display: grid;
-    width: 473px;
-    height: 300px;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-    'title titlebox'
-    'desc descbox'
-    'image imagebox'
-    'TOS contents6';
-}
 
 
 
