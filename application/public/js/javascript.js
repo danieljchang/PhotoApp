@@ -9,6 +9,7 @@ const TOS = document.getElementById('TOS');
 
 document.addEventListener('submit', e => {
     e.preventDefault();
+    console.log("working");
     check();
 });
 
@@ -23,7 +24,7 @@ function check(){
     const password1Value = password1.value;
     const emailValue = email.value;
 
-    if (usernameValue.length < 3 && usernameCheck.test(usernameValue.charAt(0))  ){
+    if (usernameValue.length < 3){
         setErrorFor(username, "Username must be at least 3 or more characters");
     
         
@@ -35,9 +36,10 @@ function check(){
     }
     
     if (emailCheck.test(emailValue)){
-        setErrorFor(email, "Email is not valid");
-    }else {
         setSuccessFor(email);
+        
+    }else {
+        setErrorFor(email, "Email is not valid");
     }
 
 
@@ -45,9 +47,9 @@ function check(){
         setErrorFor(password, "Password must be 8 characters long");
     }
     else if (!(passwordCheck.test(passwordValue))){
-        setErrorFor(password, "Must include 1 uppercase letter, 1 lowercase letter, and 1 of the following characters (/*-+!@#$^&).");
-    }else{
         setSuccessFor(password);
+    }else{
+        setErrorFor(password, "Must include 1 uppercase letter, 1 lowercase letter, and 1 of the following characters (/*-+!@#$^&).");
     }
 
     if (password1Value !== passwordValue){
@@ -68,17 +70,17 @@ function setSuccessFor(input) {
 	const formControl = input.parentElement;
 	formControl.className = 'form-control success';
 }
-let users = [];
-const addUser = (ev)=>{
-    ev.preventDefault();
-    let user = {
-        username: document.getElementById('username').value,
-        password: document.getElementById('password').value,
-        email: document.getElementById('email'),
-        age: document.getElementById('age')
-    }
-    users.push(user);
-    window.location.href="/login";
-}
+// let users = [];
+// const addUser = (ev)=>{
+//     ev.preventDefault();
+//     let user = {
+//         username: document.getElementById('username').value,
+//         password: document.getElementById('password').value,
+//         email: document.getElementById('email'),
+//         age: document.getElementById('age')
+//     }
+//     users.push(user);
+    
+// }
 
-document.getElementById('btn').addEventListener('click', addUser);
+// document.getElementById('btn').addEventListener('click', addUser);
