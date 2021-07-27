@@ -27,7 +27,7 @@
 
 // });
 
-// router.post('/createUser', (req, res, next)=>{
+// router.post('/register', (req, res, next)=>{
 //     let password = req.body.password;
 //     let username = req.body.username;
 //     let email = req.body.email;

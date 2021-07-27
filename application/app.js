@@ -6,6 +6,7 @@ var logger = require("morgan");
 var handlebars = require("express-handlebars");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
+var registerRouter = require("./routes/usersRegister");
 
 var app = express();
 
@@ -32,6 +33,7 @@ app.use("/public", express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter); // route middleware from ./routes/index.js
 app.use("/users", usersRouter); // route middleware from ./routes/users.js
+app.use("/usersRegister", registerRouter);
 
 app.use((err, req, res, next) => {
   res.status(500);

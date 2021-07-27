@@ -61,7 +61,7 @@
   margin: 73px 10px;
   justify-content: right;
   text-align:right;
-  width: 80px;
+  width: fit-content;
   height: 20px;
 }
 .explore{
