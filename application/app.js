@@ -3,10 +3,15 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+var sessions = require('express-session');
+var mysqlSession = require('express-mysql-session')(sessions);  //npm i express-sessions express-mysql-session
+var flash = require('express-flash');
+
 var handlebars = require("express-handlebars");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var registerRouter = require("./routes/usersRegister");
+
 
 var app = express();
 
@@ -17,11 +22,31 @@ app.engine(
     partialsDir: path.join(__dirname, "views/partials"), // where to look for partials
     extname: ".hbs", //expected file extension for handlebars files
     defaultLayout: "layout", //default layout for app, general template for all pages in app
-    helpers: {}, //adding new helpers to handlebars for extra functionality
+    helpers: {
+      emptyObject: (obj, options) => {
+        return !(obj.constructor === Object && Object.keys(obj).length == 0)
+      }
+    }, //adding new helpers to handlebars for extra functionality
   })
 );
 
+var mysqlSessionStore = new mysqlSession({
+  /*using default options*/ 
+}
+, require('./conf/database'));
+
+
 // view engine setup
+app.use(sessions({
+  key: "csid",
+  secret: "secret session id",
+  store: mysqlSessionStore,
+  resave: false,
+  saveUninitialized: false
+}))
+
+
+app.use(flash());
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 
@@ -31,9 +56,18 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use("/public", express.static(path.join(__dirname, "public")));
 
+app.use((req, res, next) =>{
+  if(req.session.username){
+    res.locals.logged = true;
+  }
+  next();
+})
+
 app.use("/", indexRouter); // route middleware from ./routes/index.js
 app.use("/users", usersRouter); // route middleware from ./routes/users.js
 app.use("/usersRegister", registerRouter);
+
+
 
 app.use((err, req, res, next) => {
   res.status(500);
@@ -43,10 +77,10 @@ app.use((err, req, res, next) => {
  * Catch all route, if we get to here then the 
  * resource requested could not be found.
  */
-app.use((req,res,next) => {
+app.use((req, res, next) => {
   next(createError(404, `The route ${req.url} does not exist.`));
 })
-  
+
 
 /**
  * Error Handler, used to render the error html file

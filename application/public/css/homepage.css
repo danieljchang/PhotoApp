@@ -8,7 +8,7 @@
   height: 100%;
   width: 100%;
   overflow: hidden;
-  grid-template-rows: 1fr 4fr .2fr;
+  grid-template-rows: .5fr 4fr .2fr;
   grid-template-columns: repeat(3, 1fr);
   grid-template-areas: 
   "logo logo logo" 
@@ -113,7 +113,7 @@
   width: 80%;
   margin-top: 20px;
   margin-inline-start: auto;
-  margin-left: 30rem;
+  margin-left: 27rem;
   align-items: center;
   display: block;
   height: 75%;

@@ -11,8 +11,28 @@
   <body>
     <div class="container">
       {{>banner}}
+      {{#if (emptyObject messages)}}
+      {{> flashmessage}}
+      {{/if}}
       {{{body}}}
       {{>footer}}
     </div>
+
+    {{#if logged}}
+      <script>
+        let ele = document.getElementById("logout-button");
+        if (ele){
+          ele.onclick = (even) => {
+            fetch('/users/logout', {
+              method: "POST",
+
+            })
+            .then((data) => {
+              location.replace('/homepage')
+            })
+          }
+        }
+      </script>
+    {{/if}}
   </body>
 
