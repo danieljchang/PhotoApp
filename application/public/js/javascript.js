@@ -1,16 +1,15 @@
 
 // const form = document.getElementById('registration-form');
-// const username =document.getElementById('username');
-// const email = document.getElementById('email');
-// const password = document.getElementById('password');
-// const password1 = document.getElementById('password1');
+// const usernameForm =document.getElementById('username');
+// const emailForm = document.getElementById('email');
+// const passwordForm = document.getElementById('password');
+// const passwordForm1 = document.getElementById('password1');
 // const age = document.getElementById('age');
 // const TOS = document.getElementById('TOS');
 
 // document.addEventListener('submit', e => {
 //     e.preventDefault();
 //     check();
-//     console.log("working");
 // });
 
 // const passwordCheck = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[/*-+!@#$^&]).+$");
@@ -19,10 +18,10 @@
 
 
 // function check(){
-//     const usernameValue = username.value;
-//     const passwordValue = password.value;
-//     const password1Value = password1.value;
-//     const emailValue = email.value;
+//     const usernameValue = usernameForm.value;
+//     const passwordValue = passwordForm.value;
+//     const password1Value = passwordForm1.value;
+//     const emailValue = emailForm.value;
 
 //     if (usernameValue.length < 3){
 //         setErrorFor(username, "Username must be at least 3 or more characters");
@@ -70,17 +69,3 @@
 // 	const formControl = input.parentElement;
 // 	formControl.className = 'form-control success';
 // }
-// let users = [];
-// const addUser = (ev)=>{
-//     ev.preventDefault();
-//     let user = {
-//         username: document.getElementById('username').value,
-//         password: document.getElementById('password').value,
-//         email: document.getElementById('email'),
-//         age: document.getElementById('age')
-//     }
-//     users.push(user);
-    
-// }
-
-// document.getElementById('btn').addEventListener('click', addUser);
