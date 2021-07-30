@@ -4,7 +4,7 @@ const db = require('../conf/database');
 const UserError = require('../helpers/error/UserError');
 const { successPrint, errorPrint } = require('../helpers/debug/debugprinters');
 var bcrypt = require('bcrypt');
-const { registerValidation } = require('../middleware/validation')
+const { registerValidation, loginValidation } = require('../middleware/validation')
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
@@ -35,6 +35,7 @@ router.get('/getAllPostsP', (req, res, next) => {
     })
 
 });
+router.use('/login', loginValidation);
 
 router.post('/login', (req, res, next) => {
   let username = req.body.username;

@@ -50,6 +50,18 @@ const registerValidation = (req, res, next) => {
     }
 }
 const loginValidation = (req, res, next) => {
-
+    if (req.body.username.length == 0){
+        req.flash('error', "Username is required to log in");
+        req.session.save(err => {
+            res.redirect("/login");
+        })
+    }else if (req.body.password.length == 0){
+        req.flash('error', "Password is required to log in");
+        req.session.save(err => {
+            res.redirect("/login");
+        })
+    }else {
+        next();
+    }
 }
 module.exports = {registerValidation, loginValidation}
