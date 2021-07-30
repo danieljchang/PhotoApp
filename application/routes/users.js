@@ -4,6 +4,8 @@ const db = require('../conf/database');
 const UserError = require('../helpers/error/UserError');
 const { successPrint, errorPrint } = require('../helpers/debug/debugprinters');
 var bcrypt = require('bcrypt');
+const { registerValidation } = require('../middleware/validation')
+
 /* GET users listing. */
 router.get('/', function (req, res, next) {
   res.send('respond with a resource');
@@ -91,7 +93,7 @@ router.post('/logout', (req, res, next) => {
   })
 });
 
-
+router.use('/register', registerValidation);
 router.post('/register', (req, res, next) => {
   let password = req.body.password;
   let username = req.body.username;
@@ -99,7 +101,11 @@ router.post('/register', (req, res, next) => {
   let password1= req.body.password1;
   // Validate here
   
-  
+
+
+
+
+
   db.execute("SELECT * FROM users WHERE username=?", [username])
     .then(([results, fields]) => {
       if (results && results.length == 0) {
@@ -154,17 +160,7 @@ router.post('/register', (req, res, next) => {
 });
 
 
-function setErrorFor(input, message) {
-  const formControl = input.parentElement;
-  const small = formControl.querySelector('small');
-  small.innerText = message;
-  formControl.className = 'form-control error';
-}
 
-function setSuccessFor(input) {
-  const formControl = input.parentElement;
-  formControl.className = 'form-control success';
-}
 
 
 
