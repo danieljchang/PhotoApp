@@ -7,7 +7,6 @@
   display: grid;
   height: 100%;
   width: 100%;
-  overflow: hidden;
   grid-template-rows: .5fr 4fr .2fr;
   grid-template-columns: repeat(3, 1fr);
   grid-template-areas: 
@@ -17,7 +16,6 @@
 }
 .navwrapper {
   background-color: pink;
-  padding: 20px;
   margin: 0;
   grid-area: logo;
   display: grid;
@@ -110,7 +108,7 @@
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-  width: 80%;
+  width: 30rem;
   margin-top: 20px;
   margin-inline-start: auto;
   margin-left: 27rem;
@@ -215,6 +213,5 @@
 
 .footer{
   grid-area: footer;
-  display: flex;
   background-color: pink;
 }

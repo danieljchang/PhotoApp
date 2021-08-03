@@ -11,9 +11,7 @@
     justify-content: center;
     align-items: center;;
 }
-body{
-    background: linear-gradient(90deg, rgba(61,58,126,1) 0%, rgba(78,72,208,1) 35%, rgba(77,180,201,1) 74%);
-}
+
 #items-count{
     text-align: right;
 }

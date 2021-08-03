@@ -1,4 +1,50 @@
 
+#main{
+    grid-area: content;
+    padding-top: .35em;
+    padding-bottom: .35em;
+    display: grid;
+    gap: .3rem .3rem;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 1fr;
+    grid-auto-columns: 1fr 1fr 1fr 1fr;
+    background-color: skyblue;
+}
+.card{
+    display: grid;
+    grid-template-rows: 186px 150px;
+    grid-template-columns: auto;
+    border: 0.0625rem solid #cccccc;
+    border-radius: .25rem;
+    box-shadow: 0 2px 2px #dfdede;
+}
+.card-image{
+    grid-area: 1/1/2/2;
+}
+div[class=card] > img{
+    height: 100%;
+    width: 100%;
+}
+.card-title{
+    color: rgb(209, 33, 33);
+    margin-bottom: .1rem;
+    margin-top: 0;
+    padding-top: .1rem;
+}
+.card-body{
+    grid-area: 2/1/3/2;
+    padding: .75rem;
+    background-color: white;
+    border-radius: 0 0 .2rem .2rem;
+}
+div[class=card-body] > a[class=card-button]{
+    text-decoration: none;
+}
+.card-text{
+    color: white;
+}
+
 
 
 .form-control input{
@@ -88,7 +134,8 @@
     position:fixed;
     left: 50%;
     top: 25%;
-    transform: translate(-50%,0)
+    transform: translate(-50%,0);
+    z-index: 9999;
 }
 #flash-message div{
     text-align: center;

@@ -1,0 +1,25 @@
+<div id="post-container">
+    <img id ="image-post-image" src="/{{currentPost.photopath}}">
+    <div id = "info-message-grid">
+        <div id ="info">
+            <header id="image-post-title">
+                <h2 id="image-post-title-text">{{currentPost.title}}</h2>
+            </header>
+            <div id ="image-post-author" class="info-tags">{{currentPost.username}}</div>
+            <div id ="image-post-date" class="info-tags">{{currentPost.created}}</div>
+            <div id ="image-post-desc" class="info-tags">{{currentPost.description}}</div>
+        </div>
+        <div id="messages">
+            <header id="comment-title">
+                <h2>Comments</h2>
+            </header>
+            <div id="message-list">
+
+            </div>
+            <div id="comment-box">
+                <textarea id="comment-box-text"></textarea>
+                <i id="comment-box-button" class="fa fa-comment" aria-hidden="true" style="text-align: center;"></i>
+            </div>
+        </div>
+    </div>
+</div>

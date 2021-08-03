@@ -10,7 +10,8 @@ var flash = require('express-flash');
 var handlebars = require("express-handlebars");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
-var registerRouter = require("./routes/usersRegister");
+var postsRouter = require("./routes/posts");
+
 
 
 var app = express();
@@ -43,7 +44,7 @@ app.use(sessions({
   store: mysqlSessionStore,
   resave: false,
   saveUninitialized: false
-}))
+}));
 
 
 app.use(flash());
@@ -61,12 +62,11 @@ app.use((req, res, next) =>{
     res.locals.logged = true;
   }
   next();
-})
+});
 
 app.use("/", indexRouter); // route middleware from ./routes/index.js
 app.use("/users", usersRouter); // route middleware from ./routes/users.js
-app.use("/usersRegister", registerRouter);
-
+app.use('/posts', postsRouter);
 
 
 app.use((err, req, res, next) => {
@@ -79,7 +79,7 @@ app.use((err, req, res, next) => {
  */
 app.use((req, res, next) => {
   next(createError(404, `The route ${req.url} does not exist.`));
-})
+});
 
 
 /**
