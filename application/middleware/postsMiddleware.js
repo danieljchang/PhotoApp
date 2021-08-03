@@ -1,4 +1,4 @@
-const {getNRecentPosts, getPostById} = require('../models/Posts');
+const { getNRecentPosts, getPostById } = require('../models/Posts');
 const postMiddleware = {}
 
 postMiddleware.getRecentPosts = async function(req, res, next){
@@ -37,7 +37,7 @@ postMiddleware.getPostById = async function(req, res, next) {
             res.redirect('/homepage');
         }
     }catch (error){
-        next(error);
+        next(err);
     }
 }
 

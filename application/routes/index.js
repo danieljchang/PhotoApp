@@ -32,8 +32,8 @@ router.get('/postimage', (req, res, next)=>{
   res.render('postimage');
 });
 
-router.get('/post/:id(\\d+)', getPostById,(req, res, next) => {
-  res.render('imagepost', {title: `Post ${req.params.id}`});
+router.get('/post/:id(\\d+)', getPostById, (req, res, next) => {
+  res.render('imagepost', { title: `Post ${req.params.id}`});
 });
 //localhost:3000/posts/search?search=value
 

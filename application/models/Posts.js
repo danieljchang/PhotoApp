@@ -31,6 +31,7 @@ PostModel.getNRecentPosts = (numberOfPosts) => {
         })
         .catch((err) => Promise.reject(err));
 };
+
 PostModel.getPostById = (postId) => {
     let baseSQL = 
     `SELECT u.username, p.title, p.description, p.photopath, p.created 

@@ -11,6 +11,7 @@ var handlebars = require("express-handlebars");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var postsRouter = require("./routes/posts");
+var commentRouter = require("./routes/comments")
 
 
 
@@ -67,7 +68,7 @@ app.use((req, res, next) =>{
 app.use("/", indexRouter); // route middleware from ./routes/index.js
 app.use("/users", usersRouter); // route middleware from ./routes/users.js
 app.use('/posts', postsRouter);
-
+app.use('/comments', commentRouter);
 
 app.use((err, req, res, next) => {
   res.status(500);
