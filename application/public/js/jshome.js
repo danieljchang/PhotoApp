@@ -106,12 +106,12 @@ function createCard(postData){
 }
 
 function executeSearch(){
-    let searchTerm = document.getElementById('search').value;
+    let searchTerm = document.getElementById('search-text').value;
     if(!searchTerm){
         location.replace('/homepage');
         return;
     }
-    let mainContent =document.getElementById('main-content');
+    let mainContent = document.getElementById('main');
     let searchURL = `/posts/search?search=${searchTerm}`
     fetch(searchURL)
     .then((data) => {
@@ -122,10 +122,11 @@ function executeSearch(){
         data_json.results.forEach((row) =>{
             newMainContentHTML += createCard(row);
         });
-        mainContent.innerHTML = newMainContentHTML;
-        if(data_json.message){
-            addFlashFromFrontEnd(data_json.message);
-        }
+        console.log(newMainContentHTML);
+        // mainContent.innerHTML = newMainContentHTML;
+        // if(data_json.message){
+        //     addFlashFromFrontEnd(data_json.message);
+        // }
     })
     .catch((err) => console.log(err));
 }

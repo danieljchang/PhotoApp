@@ -74,18 +74,40 @@
   width: fit-content;
   height: 20px;
 }
+
 .search{
   justify-content: right;  
   padding: 10px 16px 10px;
-  height: 26px;
-  border: 1px solid black;
+  height: 27px;
   line-height:20px;
   margin: 75px 20px;
-
-  font-size: 17px;
+  font-size: 20px;
   grid-area: search;
   position: relative;
+  width: 20rem;
+}
 
+
+form.search input[type=text] {
+  justify-content: left;
+  font-size: 20px;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.search button {
+  float: right;
+  width: 20%;
+  height: 100%;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  cursor: pointer;
+}
+
+form.search button:hover {
+  background: #0b7dda;
 }
 
 

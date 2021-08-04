@@ -1,8 +1,6 @@
 var db = require("../conf/database");
 let CommentModel = {};
 
-
-
 CommentModel.create = (userId, postId, comment) => {
     let baseSQL = `INSERT INTO comments (comment, fk_authorid, fk_postid) VALUES (?, ?, ?);`;
     return db
@@ -25,9 +23,9 @@ CommentModel.getCommentsForPost = (postId) => {
     WHERE fk_postid=?
     ORDER BY c.created DESC`;
     return db.query(baseSQL, [postId])
-    .then(([results, fields]) => {
-        return Promise.resolve(results);
-    }).catch(err => Promise.reject(err));
+        .then(([results, fields]) => {
+            return Promise.resolve(results);
+        }).catch(err => Promise.reject(err));
 };
 
 

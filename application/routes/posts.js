@@ -74,7 +74,7 @@ router.get('/search', async (req, res, next) => {
             });
         } else {
             let results = await PostModel.search(searchTerm);
-            if (results && results.length) {
+            if (results.length) {
                 res.send({
                     message: `${results.length} results found`,
                     results: results
