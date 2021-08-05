@@ -6,7 +6,6 @@ var isLoggedIn = require('../middleware/routeprotectors').userIsLoggedIn;
 
 // Some what of a validation. Problem with the message being flashed, but it works.
 router.post('/create', isLoggedIn,(req, res, next) => {
-
     let {comment, postId} = req.body;
     let username = req.session.username;
     let userId = req.session.userId;
