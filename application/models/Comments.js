@@ -13,7 +13,8 @@ CommentModel.create = (userId, postId, comment) => {
             }
         })
         .catch((err) => Promise.reject(err));
-}
+    }
+
 
 CommentModel.getCommentsForPost = (postId) => {
     let baseSQL = `SELECT u.username, c.comment, c.created, c.id 

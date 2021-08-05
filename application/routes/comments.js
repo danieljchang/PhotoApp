@@ -2,17 +2,11 @@ var express = require("express");
 var router = express.Router();
 const { successPrint, errorPrint } = require("../helpers/debug/debugprinters");
 const { create } = require("../models/Comments");
+var isLoggedIn = require('../middleware/routeprotectors').userIsLoggedIn;
 
-router.post('/create', (req, res, next) => {
-    // if(req.session.username){
-    //     errorPrint("Must be logged in to comment");
-    //     req.json({
-    //         code: -1,
-    //         status: "danger",
-    //         message: "must be logged in to create a comment"
-    //     });
-    // }else{
-    // }
+// Some what of a validation. Problem with the message being flashed, but it works.
+router.post('/create', isLoggedIn,(req, res, next) => {
+
     let {comment, postId} = req.body;
     let username = req.session.username;
     let userId = req.session.userId;
@@ -37,6 +31,7 @@ router.post('/create', (req, res, next) => {
             }).catch((err) => next(err));
         }
     })
+    
 })
 
 
