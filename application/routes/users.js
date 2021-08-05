@@ -59,14 +59,9 @@ router.post('/login', (req, res, next) => {
     })
     .catch((err) => {
       errorPrint("user login failed");
-      if (err instanceof UserError) {
-        errorPrint(err.getMessage());
-        req.flash('error', err.getMessage());
-        res.status(err.getStatus());
-        res.redirect('/login')
-      } else {
-        next(err)
-      }
+      req.flash('error', "Invalid username and/or password!");
+      res.status(200);
+      res.redirect("/login");
     })
 });
 
@@ -78,6 +73,7 @@ router.post('/logout', (req, res, next) => {
       successPrint("Session was destroyed");
       res.clearCookie('csid');
       res.json({ status: "OK", message: "User is logged out" });
+      
     }
   })
 });

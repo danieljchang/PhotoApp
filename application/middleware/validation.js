@@ -10,7 +10,11 @@ const checkUsername = (username) => {
 }
 
 const checkPassword = (password) => {
-    let passwordCheck = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[/*-+!@#$^&]).+$");
+    /**
+     * minumum 8 characters
+     * one letter one number and one special character
+     */
+    let passwordCheck = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
     return passwordCheck.test(password);
 }
 
@@ -29,8 +33,8 @@ const registerValidation = (req, res, next) => {
         req.session.save(err => {
             res.redirect("/registration");
         })
-    }else if(checkPassword(password) ){
-        req.flash('error', "Invalid password");
+    }else if(!checkPassword(password) ){
+        req.flash('error', "Invalid password, must be 8 characters, 1 letter, 1 number, and 1 special character");
         req.session.save(err => {
             res.redirect("/registration");
         })
