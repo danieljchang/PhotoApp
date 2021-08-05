@@ -19,9 +19,12 @@ Please follow the instructions below and fill in the information requested when 
 # Build/Run Instructions
 
 ## Build Instructions
-1. steps here
-2. steps here
+1. install npm
+2. download workbench
+3. npm start
 
 ## Run Instructions
-1. steps here
-2. steps here 
+1. Create an account using the standard a unique username and email with a password 8 characters long inlcuding a character digit nad a special character.
+2. post a picture.
+3. click on details of a post
+4. comment
