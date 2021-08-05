@@ -64,4 +64,19 @@ const loginValidation = (req, res, next) => {
         next();
     }
 }
+
+
+// The validation was constantly giving me undefined for description and title.
+
+// const postValidation =  (req, res, next) => {
+//     if (req.body.description == undefined || req.body.title == undefined){
+//         req.flash('error', "Post must have a title and description");
+//         req.session.save(err => {
+//             res.redirect("/");
+//         })
+//     }else{
+//         next();
+//     }
+// }
+
 module.exports = {registerValidation, loginValidation}

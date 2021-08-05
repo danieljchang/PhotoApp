@@ -70,10 +70,10 @@ app.use("/users", usersRouter); // route middleware from ./routes/users.js
 app.use('/posts', postsRouter);
 app.use('/comments', commentRouter);
 
-app.use((err, req, res, next) => {
-  res.status(500);
-  res.send('Something went wrong with your database');
-});
+// app.use((err, req, res, next) => {
+//   res.status(500);
+//   res.send('Something went wrong with your database');
+// });
 /**
  * Catch all route, if we get to here then the 
  * resource requested could not be found.

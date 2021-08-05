@@ -9,7 +9,7 @@ const { registerValidation, loginValidation } = require('../middleware/validatio
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
-  res.send('respond with a resource');
+
 });
 
 router.get('/getAllUsers', (req, res, next) => {
@@ -51,7 +51,7 @@ router.post('/login', (req, res, next) => {
         res.locals.logged = true;
         req.flash('success', 'You have been logged in!');
         // res.cookie("logged", username, {expires: new Date(Date.now()+90000000), httpOnly: false});
-        res.redirect('/homepage');
+        res.redirect('/');
         // res.render('index', {logged:true});
       } else {
         throw new UserError("Invalid username and/or password!", "/login", 200);

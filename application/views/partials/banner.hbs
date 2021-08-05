@@ -1,5 +1,5 @@
 <div class="navwrapper">
-    <a href="/homepage" class="navbar">LOGO</a>
+    <a href="/" class="navbar">PhotoApp</a>
     <a href="/postimage" class="posty" id="posty">POST</a>
 
     {{#if logged }}
@@ -10,9 +10,7 @@
 
     {{/if}}
 
-    <a href="/home" class="explore" id="explore">Explore</a>
-
-    <form class="search" id="search" action="../posts/search" method="GET" enctype="application/x-www-form-urlencoded">
+    <form class="search" id="search" action="/posts/search" method="GET" enctype="application/x-www-form-urlencoded">
         <input id="search-text" type="text" placeholder="Search.." name="search">
         <button type="submit"><i class="fa fa-search"></i></button>
     </form>
