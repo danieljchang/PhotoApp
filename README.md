@@ -20,7 +20,7 @@ Please follow the instructions below and fill in the information requested when 
 ## Build Instructions
 1. install npm
 2. download workbench
-3. 3. download the databases in models
+3. download the databases in models
 
 ## Run Instructions
 1. npm start
