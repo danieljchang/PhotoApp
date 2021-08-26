@@ -2,7 +2,7 @@
 
 To understand HTML CSS and Handlebars. Application of Javascript and using a database.
 
-## Student Information
+## Contact Information
 
 |               | Information   |
 |:-------------:|:-------------:|
