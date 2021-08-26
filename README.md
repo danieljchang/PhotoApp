@@ -10,9 +10,8 @@ Please follow the instructions below and fill in the information requested when 
 
 |               | Information   |
 |:-------------:|:-------------:|
-| Student Name  | Daniel Chang    |
-| Student ID    | 921174056       |
-| Student Email | dchang9@mail.sfsu.edu    |
+|  Name  | Daniel Chang    |
+| Email | dchang9@mail.sfsu.edu    |
 
 
 
@@ -21,6 +20,7 @@ Please follow the instructions below and fill in the information requested when 
 ## Build Instructions
 1. install npm
 2. download workbench
+3. 3. download the databases in models
 
 ## Run Instructions
 1. npm start
